@@ -6,10 +6,13 @@ import './styles.css';
 
 function App() {
   const [currQuestion, setCurrQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
 
   useEffect(()=>{
     if(currQuestion !== ''){
-      console.log(currQuestion);
+      fetch('http://localhost:8080/'+currQuestion)
+        .then(response => response.json())
+        .then((data) => setAnswer(data.answer));
     }
   },[currQuestion])
 
@@ -18,7 +21,7 @@ function App() {
       <h1 className="mainTitle">Q/A app - select a question from the list below, get the answer.</h1>
       <main>
         <Questions setQuestion={setCurrQuestion}/>
-        <Answers />
+        <Answers answer={answer}/>
       </main>
     </div>
   );

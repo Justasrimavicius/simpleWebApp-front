@@ -1,10 +1,15 @@
 import React from 'react';
 
-function Answers() {
+function Answers(props) {
     return (
         <div className='answersDiv'>
             <h5>Answer</h5>
-            <p className='answerField'>some very indepth answer hereanswer hereanswer hereanswer hereanswer hereanswer here</p>
+            <div className='answersDiv-layer1'>
+                <div className='answersDiv-layer2'>
+                    <p className='answerField'>{props.answer}</p>
+                </div>
+            </div>
+
         </div>
     );
 }
