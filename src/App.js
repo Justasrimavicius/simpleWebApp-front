@@ -4,13 +4,15 @@ import Answers from './Answers.js';
 
 import './styles.css';
 
+import httpReqPath from "./httpReqPath.js";
+
 function App() {
   const [currQuestion, setCurrQuestion] = useState('');
   const [answer, setAnswer] = useState('');
 
   useEffect(()=>{
     if(currQuestion !== ''){
-      fetch('http://localhost:8080/'+currQuestion)
+      fetch(httpReqPath+currQuestion)
         .then(response => response.json())
         .then((data) => setAnswer(data.answer));
     }

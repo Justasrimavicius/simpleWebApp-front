@@ -19,7 +19,7 @@ function Questions(props) {
             prevClickedButton.current = e.target;
         
         }}>
-            <button id="Q1">Date of the christianization of Lithuania.</button>
+            <button id="Q1">Christianization of Lithuania date.</button>
             <button id="Q2">Franklin D. Roosevelt birth date.</button>
             <button id="Q3">The start of the American civil war.</button>
             <button id="Q4">Christopher Columbus trips across the atlantic ocean dates.</button>
